@@ -1,0 +1,1 @@
+[{"name":"app.R","content":"library(shiny)\r\nui <- fluidPage(sliderInput('obs', 'Number of observations:', 1, 100, 50), plotOutput('distPlot'))\r\nserver <- function(input, output) {\r\n  output$distPlot <- renderPlot({\r\n    hist(rnorm(input$obs))\r\n  })\r\n}\r\nshinyApp(ui, server)\r\n","type":"text"}]
